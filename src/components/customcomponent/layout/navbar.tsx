@@ -8,31 +8,31 @@ import SettingsPanel from "./settingsPanel";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b px-4 py-3 flex items-center justify-between fixed z-50 top-0 right-0 left-0 backdrop-blur-xl">
+    <nav className="w-full border-b px-4 py-3 flex items-center justify-between fixed z-50 top-0 right-0 left-0 backdrop-blur-xl bg-cyan-50">
       {/* Logo */}
       <div className="text-xl font-bold">Quran Explorer</div>
 
       {/* Desktop menu */}
       <div className="hidden md:flex gap-6 items-center">
-        <Link href="/">Surahs</Link>
+        <Link className="text-cyan-600 font-semibold" href="/">Surahs</Link>
       </div>
       {/* Mobile menu */}
-      <div className="flex gap-2">
+      <div className="flex gap-2 bg-cyan-50">
         <LanguageSwitcher />
 
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="lg" className="border-0 hover:rounded-full hover:text-cyan-500 transition-colors duration-500 hover:cursor-pointer bg-cyan-50 hover:bg-white">
               <Settings />
             </Button>
           </SheetTrigger>
 
-          <SheetContent className="p-3">
+          <SheetContent className="p-3 bg-cyan-50">
             <div className="flex flex-col gap-2 mt-6">
               <Link className="md:hidden" href="/">
                 Surahs
               </Link>
-              <hr />
+              <hr  className="md:hidden"/>
               <SettingsPanel />
             </div>
           </SheetContent>

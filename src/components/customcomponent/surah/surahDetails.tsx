@@ -2,6 +2,7 @@
 "use client";
 import { useLanguage } from "@/app/helper/languageContext";
 import { useSettings } from "@/app/helper/settingsContext";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import React, { useMemo, useState } from "react";
@@ -60,17 +61,8 @@ export default function SurahDetails({ engData, araData }: SurahDetailsProps) {
 
   return (
     <div>
-      <div className="relative max-w-sm md:max-w-md mb-4">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input
-          placeholder="Search surah (e.g, ayah, translation)..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="pl-10 bg-white focus-visible:ring-cyan-500 shadow-sm"
-        />
-      </div>
-      <div className="text-center mb-6 border-b pb-6">
-        <h1 className="text-4xl font-bold mb-2">
+      <div className="text-center mb-4  pb-4">
+        <h1 className="md:text-4xl text-2xl font-bold">
           {lang === "ar" ? araData.name : araData.englishName}
         </h1>
 
@@ -78,15 +70,19 @@ export default function SurahDetails({ engData, araData }: SurahDetailsProps) {
           {engData.englishNameTranslation}
         </h2>
 
-        <div className="flex justify-center gap-4 mt-4 text-sm font-medium">
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full">
-            {engData.revelationType}
-          </span>
-
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full">
-            {engData.numberOfAyahs} Ayahs
-          </span>
+        <div className="flex justify-center gap-4">
+          <Badge className="bg-cyan-500">{engData.numberOfAyahs} Ayahs</Badge>
+          <Badge className="bg-cyan-500"> {engData.revelationType}</Badge>
         </div>
+      </div>
+      <div className="relative max-w-sm md:max-w-lg mx-auto mb-5">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Input
+          placeholder="Search surah (e.g, ayah, translation)..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="p-5 pl-12 bg-white focus-visible:ring-cyan-500 shadow-sm rounded-4xl"
+        />
       </div>
 
       {/* AYAHS */}
