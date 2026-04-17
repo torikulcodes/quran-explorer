@@ -42,7 +42,7 @@ export default function SurahDetails({ engData, araData }: SurahDetailsProps) {
   const { lang } = useLanguage();
 
   return (
-    <div className="space-y-6 mt-8">
+    <div className=" mt-8">
       {/* HEADER */}
       <div className="text-center mb-10 border-b pb-6">
         <h1 className="text-4xl font-bold mb-2">
