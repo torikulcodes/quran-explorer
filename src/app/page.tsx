@@ -1,7 +1,12 @@
-import React from 'react'
+import AllSurahList from "@/components/customcomponent/surah/allSurahList";
+import { surahService } from "@/service/surah";
+import React from "react";
 
-export default function Home() {
+export default async function Home() {
+  const surahs = await surahService.getAllSurah();
   return (
-    <div >page</div>
-  )
+    <div>
+      <AllSurahList surahs={surahs.data} />
+    </div>
+  );
 }

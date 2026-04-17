@@ -127,3 +127,8 @@
     @apply font-sans;
     }
 }
+
+
+.global_weidth{
+  @apply w-full p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 max-w-[1200px] mx-auto;
+}
