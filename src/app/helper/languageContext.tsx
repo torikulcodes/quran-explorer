@@ -9,9 +9,11 @@ const LanguageContext = createContext<{
   setLang: (lang: Lang) => void;
 } | null>(null);
 
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-
-  // ✅ এখানেই localStorage থেকে initial value নিবো
+export const LanguageProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [lang, setLangState] = useState<Lang>(() => {
     if (typeof window !== "undefined") {
       return (localStorage.getItem("lang") as Lang) || "en";

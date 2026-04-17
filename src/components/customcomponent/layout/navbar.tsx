@@ -1,9 +1,10 @@
 "use client";
-import { Menu } from "lucide-react";
+import { Menu, Search, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import LanguageSwitcher from "./languageSwitcher";
+import SettingsPanel from "./settingsPanel";
 
 export default function Navbar() {
   return (
@@ -14,24 +15,25 @@ export default function Navbar() {
       {/* Desktop menu */}
       <div className="hidden md:flex gap-6 items-center">
         <Link href="/">Surahs</Link>
-        <Link href="/favorites">Favorites</Link>
-          <LanguageSwitcher />
       </div>
-
       {/* Mobile menu */}
-      <div className="md:hidden">
+      <div className="flex gap-2">
+        <LanguageSwitcher />
+
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon">
-              <Menu />
+              <Settings />
             </Button>
           </SheetTrigger>
 
           <SheetContent className="p-3">
-            <div className="flex flex-col gap-4 mt-6">
-              <Link href="/">Surahs</Link>
-              <Link href="/favorites">Favorites</Link>
-              <LanguageSwitcher />
+            <div className="flex flex-col gap-2 mt-6">
+              <Link className="md:hidden" href="/">
+                Surahs
+              </Link>
+              <hr />
+              <SettingsPanel />
             </div>
           </SheetContent>
         </Sheet>

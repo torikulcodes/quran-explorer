@@ -16,7 +16,7 @@ export default async function SurahDetailsPage({ params }: any) {
   const { arabic, english } = response.data;
 
   return (
-    <div className="mt-16 global_weidth p-4">
+    <div suppressHydrationWarning className="mt-16 global_weidth p-4">
 
 
       <SurahDetails araData={arabic} engData={english} />
