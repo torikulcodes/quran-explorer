@@ -21,13 +21,10 @@ export const LanguageProvider = ({
   const router = useRouter();
 
   const setLang = (newLang: Lang) => {
-    // 1️⃣ state update
     setLangState(newLang);
 
-    // 2️⃣ cookie update
     document.cookie = `lang=${newLang}; path=/; max-age=31536000`;
 
-    // 3️⃣ server re-sync (NO reload, smooth)
     router.refresh();
   };
 
