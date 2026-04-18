@@ -38,7 +38,6 @@ export default function AllSurahList(surahs: any) {
     }
   });
 
-  // সর্ট টগল করার ফাংশন
   const toggleSort = () => {
     setSort((prev) => (prev === "asc" ? "desc" : "asc"));
   };
@@ -46,7 +45,6 @@ export default function AllSurahList(surahs: any) {
   return (
     <section className="global_weidth mt-16">
       <div className="flex justify-between items-center gap-3 mb-4">
-        {/* Search Input Box */}
         <div className="relative w-full md:max-w-md">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
@@ -57,7 +55,6 @@ export default function AllSurahList(surahs: any) {
           />
         </div>
 
-        {/* toggle sorting button */}
         <p
           onClick={toggleSort}
           className="w-max text-nowrap  md:w-auto flex items-center gap-2 transition-all duration-200 active:scale-95 hover:cursor-pointer hover:text-cyan-500"

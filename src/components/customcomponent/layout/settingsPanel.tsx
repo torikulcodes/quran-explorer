@@ -13,7 +13,7 @@ export default function SettingsPanel() {
 
   return (
     <div className="space-y-4">
-      {/* Font Family */}
+  
       <div>
         <p className="mb-2 font-semibold">Arabic Font</p>
         <Select
@@ -43,7 +43,6 @@ export default function SettingsPanel() {
         </Select>
       </div>
 
-      {/* Arabic Font Size */}
       <div>
         <p>Arabic Size: {settings.arabicSize}px</p>
         <input
@@ -57,7 +56,7 @@ export default function SettingsPanel() {
         />
       </div>
 
-      {/* Translation Size */}
+     
       <div>
         <p>Translation Size: {settings.translationSize}px</p>
         <input
