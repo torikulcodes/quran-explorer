@@ -1,5 +1,5 @@
 "use client";
-import { Menu, Search, Settings } from "lucide-react";
+import { Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import SettingsPanel from "./settingsPanel";
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b px-4 py-3 flex items-center justify-between fixed z-50 top-0 right-0 left-0 backdrop-blur-xl bg-cyan-50">
+    <nav className="w-full border-b px-4 py-3 flex items-center justify-between fixed z-50 top-0 right-0 left-0 backdrop-blur-xl">
       {/* Logo */}
       <div className="text-xl font-bold">Quran Explorer</div>
 
@@ -16,13 +16,14 @@ export default function Navbar() {
       <div className="hidden md:flex gap-6 items-center">
         <Link className="text-cyan-600 font-semibold" href="/">Surahs</Link>
       </div>
+
       {/* Mobile menu */}
-      <div className="flex gap-2 bg-cyan-50">
+      <div className="flex gap-2 ">
         <LanguageSwitcher />
 
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="lg" className="border-0 hover:rounded-full hover:text-cyan-500 transition-colors duration-500 hover:cursor-pointer bg-cyan-50 hover:bg-white">
+            <Button variant="outline" size="lg" className="border-0 rounded-full hover:text-cyan-700 transition-colors duration-500 hover:cursor-pointer  hover:bg-cyan-50">
               <Settings />
             </Button>
           </SheetTrigger>

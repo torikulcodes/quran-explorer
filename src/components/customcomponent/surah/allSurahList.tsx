@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 "use client";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ArrowDownWideNarrow, ArrowUpNarrowWide, Search } from "lucide-react";
+import { ArrowDown10, ArrowDownWideNarrow, ArrowUp01, ArrowUpNarrowWide, Search } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -61,12 +61,12 @@ export default function AllSurahList(surahs: any) {
         >
           {sort === "asc" ? (
             <>
-              <ArrowUpNarrowWide className="h-4 w-4 text-primary" />
+              <ArrowUp01 className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium">Ascending (1-114)</span>
             </>
           ) : (
             <>
-              <ArrowDownWideNarrow className="h-4 w-4 text-primary" />
+              <ArrowDown10 className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium">Descending (114-1)</span>
             </>
           )}
